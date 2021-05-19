@@ -1,0 +1,17 @@
+.gameboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+  }
+  
+.pieces-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgb(0, 0, 0);
+  }

@@ -1,4 +1,6 @@
+import React from 'react';
 import './App.css';
+import Gameboard from './components/Gameboard/Gameboard.js'
 
 
 function App() {
@@ -8,6 +10,7 @@ function App() {
         <div>Sliding puzzle</div>
       </header>
       <div>Gameboard</div>
+      <Gameboard />
     </div>
   );
 }
