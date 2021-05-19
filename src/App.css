@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -11,4 +15,44 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.board-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px;
+}
+
+.cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  background-color: aquamarine;
+}
+
+.piece {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: lightblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.piece-wrapper {
+  display: flex;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgb(0, 0, 0);
 }
