@@ -1,5 +1,6 @@
 import './Piece.css';
 
+
 const calculateCoords = (position, boardWidth = 3, boardHeight = 3) => {
 
     if (position > boardWidth * boardHeight) {
@@ -7,7 +8,7 @@ const calculateCoords = (position, boardWidth = 3, boardHeight = 3) => {
     }
   
     const pieceSideInPixels = 100;
-    const positions = {
+    const coordinatesOfPositions = {
       1: { top: 0, left: 0 },
       2: { top: 0 * pieceSideInPixels, left: 1 * pieceSideInPixels },
       3: { top: 0 * pieceSideInPixels, left: 2 * pieceSideInPixels },
@@ -18,7 +19,7 @@ const calculateCoords = (position, boardWidth = 3, boardHeight = 3) => {
       8: { top: 2 * pieceSideInPixels, left: 1 * pieceSideInPixels },
       9: { top: 2 * pieceSideInPixels, left: 2 * pieceSideInPixels },
     }
-    return positions[position]
+    return coordinatesOfPositions[position]
   }
 
 const Piece = ({ id, position, onClick }) => {
