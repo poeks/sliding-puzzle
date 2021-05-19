@@ -3,9 +3,9 @@ import './Gameboard.css'
 import Piece from '../Piece/Piece.js'
 
 
-const Gameboard = () => {
-
-    const [positions, setPositions] = useState({
+function getInitialPositions(boardWidth, boardHeight) {
+  return (
+    {
       1: 1,
       2: 2,
       3: 3,
@@ -14,10 +14,16 @@ const Gameboard = () => {
       6: 6,
       7: 7,
       8: 8,
-    });
-  
-  
-    const [emptyPosition, setEmptyPosition] = useState(9);
+    }
+  );
+}
+
+
+const Gameboard = () => {
+
+    const initialPositions = getInitialPositions(3, 3)
+    const [positions, setPositions] = useState(initialPositions);
+    const [emptyPosition, setEmptyPosition] = useState(Object.keys(initialPositions).length + 1);
   
     const onClickPiece = (id) => {
       const newPositions = {...positions}
