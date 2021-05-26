@@ -5,7 +5,7 @@ function calculateNeighboursRectangularBoard(position, boardWidth, boardHeight) 
   const leftHorizontalNeighbour = position - 1;
   const rightHorizontalNeighbour = position + 1;
   
-  neighbours = new Set();
+  const neighbours = new Set();
 
   if (topVerticalNeighbour > 0) {
     neighbours.add(topVerticalNeighbour)
