@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import './Gameboard.css'
-import Piece from '../Piece/Piece.js'
+import './Gameboard.css';
+import Piece from '../Piece/Piece.js';
+import { calculateNeighbours } from '../../lib/positions';
 
 
 function getInitialPositions(boardWidth, boardHeight) {
@@ -26,12 +27,17 @@ const Gameboard = () => {
     const [emptyPosition, setEmptyPosition] = useState(Object.keys(initialPositions).length + 1);
   
     const onClickPiece = (id) => {
-      const newPositions = {...positions}
-      newPositions[id] = emptyPosition
-      setPositions(newPositions)
-      
-      const currentPositionOfPiece = positions[id]
-      setEmptyPosition(currentPositionOfPiece)
+
+      const validNeighbours = calculateNeighbours(Number(positions[id]), 3, 3)
+
+      if (validNeighbours.has(emptyPosition)) {
+        const newPositions = {...positions}
+        newPositions[id] = emptyPosition
+        setPositions(newPositions)
+        
+        const currentPositionOfPiece = positions[id]
+        setEmptyPosition(currentPositionOfPiece)
+      }
     }
   
     const getPiece = ([id, position]) => {
